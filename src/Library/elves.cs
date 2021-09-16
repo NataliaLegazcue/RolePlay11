@@ -20,7 +20,11 @@ namespace roleplay
             this.Name = name;
             this.Power = power;
             this.Defense = defense;
+
+            Console.WriteLine($"Se a creado el elfo {this.Name}");
             
         }
+
+         
     }
 }
