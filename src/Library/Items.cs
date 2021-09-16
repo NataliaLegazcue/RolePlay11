@@ -3,21 +3,21 @@ using System.Collections;
 
 namespace roleplay
 {
-    public class Items
+    public class Item
         {
-        private string Itemname {get;}
-        private int Itemdmg     {get;}
-        private int Itemdf      {get;}
-        private int Itemhp      {get;}
+        public string Name {get;}
+        public int Damage     {get;}
+        public int Defense      {get;}
+        public int Hp      {get;}
         
-        public Items(string itemname, int itemdmg, int itemdf, int itemhp)
+        public Item(string name, int damage, int defense, int hp)
         {
-            this.Itemname =    itemname;
-            this.Itemdmg  =    itemdmg;
-            this.Itemdf   =    itemdf;
-            this.Itemhp   =    itemhp;
+            this.Name    =    name;
+            this.Damage  =    damage;
+            this.Defense =    defense;
+            this.Hp      =    hp;
 
-            Console.WriteLine($"Se a creado el objeto {this.Itemname}");
+            Console.WriteLine($"Se a creado el objeto {this.Name}");
             
 
         }

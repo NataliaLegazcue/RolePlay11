@@ -7,13 +7,15 @@ namespace roleplay
 
         public void AtackElvesToWizard(Elves elfo, Wizard mago)
         {
-            if(mago.Defensa < elfo.Damage){
+            if(mago.Defense < elfo.Damage)
+            {
 
-                int daño = elfo.Damage - mago.Defensa;
-                mago.Salud = mago.Salud - daño ;
+                int daño = elfo.Damage - mago.Defense;
+                mago.Hp = mago.Hp - daño ;
                 Console.WriteLine($"{mago.Name} a recibido {daño} daño...");
             }
-            else{
+            else
+            {
             Console.WriteLine($"{mago.Name} no a recibido daño ...");
             }
        
