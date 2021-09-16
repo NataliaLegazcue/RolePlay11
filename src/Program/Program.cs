@@ -1,12 +1,18 @@
 ﻿using System;
 
-namespace Program
+namespace roleplay
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Wizard Mago1 = new Wizard("Harry Potter","Leviosaaa",100,100,100);
+
+            Elves Legolas = new Elves(100,100,"Legolas","Flechazo entre ceja y ceja",100);
+            Console.WriteLine(Legolas.Hp);
+            Legolas.Hp = 50;
+
+           
+
         }
     }
 }
