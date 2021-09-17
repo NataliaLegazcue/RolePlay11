@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace roleplay
 {
-    public class Enano
+    public class Dwarf
     {
         public string Name{get;}
         public int Defense{get;set;}
@@ -13,7 +13,7 @@ namespace roleplay
         bool Pocket=false;
         public int HpMax{get;}
 
-        public Enano (string name, int defense, int hpmax, string power, int damage)
+        public Dwarf (string name, int defense, int hpmax, string power, int damage)// Constructor para los enanos
         {
             this.Name = name;
             this.Defense = defense;
@@ -25,7 +25,7 @@ namespace roleplay
             Console.WriteLine("Se ha creado el Enano!");
         }
 
-        public void AddItem(Item item)
+        public void AddItem(Item item)// Metodo para agregar item a los enanos
         {
             if (!Pocket)
             {
@@ -44,9 +44,9 @@ namespace roleplay
                 Console.WriteLine("El personaje tiene un item equipado");
             }
         }
-        public void RemoveItem(Item item)
+        public void RemoveItem(Item item)// Metodo para remover items de los enanos
         {
-            if (Pocket)
+            if (Pocket)// Pocket verifica si el personaje tiene un objeto equipado o no, en case de ser falsa el bolsillo esta vacio y permite equipar un objeto, de lo contrario devolvera un mensaje diciendo que no se puede equipar un objeto 
             {
                 this.Damage -= item.Damage;
                 this.Hp     -= item.Hp;

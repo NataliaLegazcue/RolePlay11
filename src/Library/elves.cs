@@ -14,7 +14,7 @@ namespace roleplay
         bool Pocket=false;
         public int HpMax{get;}
         
-        public Elves(string name, int defense, int hpmax, string power, int damage)
+        public Elves(string name, int defense, int hpmax, string power, int damage) // Constructor para los elfos
         {
             this.Name = name;
             this.Defense = defense;
@@ -26,9 +26,9 @@ namespace roleplay
             Console.WriteLine($"Se a creado el elfo {this.Name}");
             
         }
-        public void AddItem(Item item)
+        public void AddItem(Item item) // Metodo para agregar item a los elfos
         {
-            if (!Pocket)
+            if (Pocket) // Pocket verifica si el personaje tiene un objeto equipado o no, en case de ser falsa el bolsillo esta vacio y permite equipar un objeto, de lo contrario devolvera un mensaje diciendo que no se puede equipar un objeto 
             {
                 this.Damage += item.Damage;
                 this.Hp     += item.Hp;
@@ -47,7 +47,7 @@ namespace roleplay
             }
         }
         
-        public void RemoveItem(Item item)
+        public void RemoveItem(Item item) // Metodo para remover items de los elfos
         {
             if (Pocket)
             {

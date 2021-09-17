@@ -19,7 +19,7 @@ namespace roleplay
 
             Item CopaAmerica = new Item ("Copa America",30,0,0);
 
-            Enano enano = new Enano("Messi", 100, 100 ,"Zurda Magica",100);
+            Dwarf enano = new Dwarf("Messi", 100, 100 ,"Zurda Magica",100);
 
             Spell spell = new Spell("Bola de fuego",50);
 
