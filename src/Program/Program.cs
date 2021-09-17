@@ -11,6 +11,10 @@ namespace roleplay
 
             Elves Legolas = new Elves("Legolas",0,100,"Flechazo entre ceja y ceja",20);
 
+            Item FlechaDorada = new Item("Flecha Dorada", 25, 0, 0)
+
+            Item GnomoBernardo = new Item("Gnomo Bernardo", 100, 50, 25)
+
             Wizard Richard = new Wizard("Richard",0,100,"Flechazo de hielo entre ceja y ceja",100);
 
             Item CopaAmerica = new Item ("Copa America",30,0,0);
