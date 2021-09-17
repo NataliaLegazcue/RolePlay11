@@ -13,7 +13,7 @@ namespace roleplay
         public int HpMax{get;set;}
         public Book Book{get;set;}
         
-        public Wizard(string name, int defense, int hpmax, string power, int damage)
+        public Wizard(string name, int defense, int hpmax, string power, int damage)// Constructor para los wizards
         {
             this.Name = name;
             this.Defense = defense;
@@ -24,7 +24,7 @@ namespace roleplay
 
            Console.WriteLine($"Se a creado el hechicero {this.Name}");
         }
-        public void AddItem(Item item)
+        public void AddItem(Item item)// Metodo para agregar item a los wizards
         {
             if (!Pocket)
             {
@@ -43,7 +43,7 @@ namespace roleplay
                 Console.WriteLine("El personaje tiene un item equipado");
             }
         }
-        public void RemoveItem(Item item)
+        public void RemoveItem(Item item)// Metodo para remover Items de los wizards
         {
             if (Pocket)
             {

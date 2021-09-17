@@ -6,7 +6,7 @@ namespace roleplay
 {
     public class Game{
 
-        public void Atack(dynamic personaje, dynamic personaje2)
+        public void Atack(dynamic personaje, dynamic personaje2) // Decidimos que era mas facil hacer una clase con toda la logica del juego, esta tiene la responsabilidad de cambiar los datos de los objetos de tipo personaje basado en las acciones que toman, y colabora con ellas para saber y modificar sus valores
         {
             Console.WriteLine($"{personaje.Name} a realizado su ataque {personaje.Power}");
 
@@ -29,7 +29,7 @@ namespace roleplay
             }
         }
 
-        public void Heal(Elves personaje, dynamic personaje2)
+        public void Heal(Elves personaje, dynamic personaje2)// En este caso decidimos que solamente los elfos tendrian la habilidad de curar, pero pueden curar a cualquier otro personaje
         {
             Console.WriteLine($"{personaje.Name} a realizado un hechizo de curacion");
             int curacion = personaje.Damage;
@@ -47,7 +47,7 @@ namespace roleplay
             
         }
 
-        public void AtackWithSpell(Wizard wizard, dynamic personaje)
+        public void AtackWithSpell(Wizard wizard, dynamic personaje)// Los wizards pueden tomar una accion especial, atacar con Spells contenidos por su libro de hechizos
         {
             Console.WriteLine($"{wizard.Name} abrio el libro {wizard.Book.Name}");
             int contador = 0;
@@ -78,51 +78,6 @@ namespace roleplay
             Console.WriteLine($"{personaje.Name} no a recibido daño ...");
             }
         }
-
-
-
-
-
-
-
-        /*public void AtackElvesToElves(Elves elfo, Elves elfo2)
-        {
-            Console.WriteLine($"{elfo.Name} a realizado su ataque {elfo.Power}");
-
-            if(elfo2.Defense < elfo.Damage)
-            {
-                int daño = elfo.Damage - elfo2.Defense;
-                elfo2.Hp = elfo2.Hp - daño ;
-                Console.WriteLine($"{elfo2.Name} a recibido {daño} daño...");
-            }
-            else
-            {
-            Console.WriteLine($"{elfo2.Name} no a recibido daño ...");
-            }
-
-        }
-
-        public void AtackElvesToEnano(Elves elfo, Enanos enano)
-        {
-            Console.WriteLine($"{elfo.Name} a realizado su ataque {elfo.Power}");
-
-            if(elfo2.Defense < elfo.Damage)
-            {
-                int daño = elfo.Damage - elfo2.Defense;
-                elfo2.Hp = elfo2.Hp - daño ;
-                Console.WriteLine($"{elfo2.Name} a recibido {daño} daño...");
-            }
-            else
-            {
-            Console.WriteLine($"{elfo2.Name} no a recibido daño ...");
-            }
-
-        }*/
-
-
-        
-
-
 
     }
 
