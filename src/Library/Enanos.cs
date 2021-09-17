@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace roleplay
 {
-    public class Enanos
+    public class Enano
     {
         public string Name{get;}
         public int Defense{get;set;}
@@ -11,15 +11,16 @@ namespace roleplay
         public string Power{get;}
         public int Damage{get;set;}
         bool Pocket=false;
-        
+        public int HpMax{get;}
 
-        public Enanos (string name, int defense, int hp, string power, int damage)
+        public Enano (string name, int defense, int hpmax, string power, int damage)
         {
             this.Name = name;
             this.Defense = defense;
-            this.Hp= hp;
+            this.Hp = hpmax;
             this.Power = power;
             this.Damage = damage;
+            this.HpMax = hpmax;
 
             Console.WriteLine("Se ha creado el Enano!");
         }
@@ -32,9 +33,10 @@ namespace roleplay
                 this.Hp     += item.Hp;
                 this.Defense+= item.Defense;
                 Console.WriteLine($"Gracias a recibir el item {item.Name}, {this.Name} a aumentado sus estadisticas");
-                Console.WriteLine ($"Sus estadisticas son vida = {this.Hp}");
-                Console.WriteLine ($"Sus estadisticas son daño = {this.Damage}");
-                Console.WriteLine ($"Sus estadisticas son defensa = {this.Defense}");
+                Console.WriteLine ($"Sus estadisticas son...");
+                Console.WriteLine ($"Vida = {this.Hp}");
+                Console.WriteLine ($"Daño = {this.Damage}");
+                Console.WriteLine ($"Defensa = {this.Defense}");
                 Pocket=true;
             }
             else
@@ -50,9 +52,10 @@ namespace roleplay
                 this.Hp     -= item.Hp;
                 this.Defense-= item.Defense;
                 Console.WriteLine($"Se le elimino el item {item.Name}, {this.Name} a perdido estadisticas");
-                Console.WriteLine ($"Sus estadisticas son vida = {this.Hp}");
-                Console.WriteLine ($"Sus estadisticas son daño = {this.Damage}");
-                Console.WriteLine ($"Sus estadisticas son defensa = {this.Defense}");
+                Console.WriteLine ($"Sus estadisticas son...");
+                Console.WriteLine ($"Vida = {this.Hp}");
+                Console.WriteLine ($"Daño = {this.Damage}");
+                Console.WriteLine ($"Defensa = {this.Defense}");
                 Pocket=false;
             }
             else

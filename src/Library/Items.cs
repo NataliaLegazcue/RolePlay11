@@ -19,7 +19,6 @@ namespace roleplay
 
             Console.WriteLine($"Se a creado el objeto {this.Name}");
             
-
         }
 
     }

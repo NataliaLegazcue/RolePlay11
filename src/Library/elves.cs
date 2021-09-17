@@ -12,14 +12,16 @@ namespace roleplay
         public string Power{get;}
         public int Damage{get;set;}
         bool Pocket=false;
+        public int HpMax{get;}
         
-        public Elves(string name, int defense, int hp, string power, int damage)
+        public Elves(string name, int defense, int hpmax, string power, int damage)
         {
-            this.Name    = name;
+            this.Name = name;
             this.Defense = defense;
-            this.Hp      = hp;
-            this.Power   = power;
-            this.Damage  = damage;
+            this.Hp = hpmax;
+            this.Power = power;
+            this.Damage = damage;
+            this.HpMax = hpmax;
 
             Console.WriteLine($"Se a creado el elfo {this.Name}");
             
@@ -32,16 +34,19 @@ namespace roleplay
                 this.Hp     += item.Hp;
                 this.Defense+= item.Defense;
                 Console.WriteLine($"Gracias a recibir el item {item.Name}, {this.Name} a aumentado sus estadisticas");
-                Console.WriteLine ($"Sus estadisticas son vida = {this.Hp}");
-                Console.WriteLine ($"Sus estadisticas son daño = {this.Damage}");
-                Console.WriteLine ($"Sus estadisticas son defensa = {this.Defense}");
+                Console.WriteLine ($"Sus estadisticas son...");
+                Console.WriteLine ($"Vida = {this.Hp}");
+                Console.WriteLine ($"Daño = {this.Damage}");
+                Console.WriteLine ($"Defensa = {this.Defense}");
+
                 Pocket=true;
             }
             else
             {
-                Console.WriteLine("El personaje tiene un item equipado");
+                Console.WriteLine("El personaje ya tiene un item equipado");
             }
         }
+        
         public void RemoveItem(Item item)
         {
             if (Pocket)
@@ -50,9 +55,10 @@ namespace roleplay
                 this.Hp     -= item.Hp;
                 this.Defense-= item.Defense;
                 Console.WriteLine($"Se le elimino el item {item.Name}, {this.Name} a perdido estadisticas");
-                Console.WriteLine ($"Sus estadisticas son vida = {this.Hp}");
-                Console.WriteLine ($"Sus estadisticas son daño = {this.Damage}");
-                Console.WriteLine ($"Sus estadisticas son defensa = {this.Defense}");
+                Console.WriteLine ($"Sus estadisticas son...");
+                Console.WriteLine ($"Vida = {this.Hp}");
+                Console.WriteLine ($"Daño = {this.Damage}");
+                Console.WriteLine ($"Defensa = {this.Defense}");
                 Pocket=false;
             }
             else
