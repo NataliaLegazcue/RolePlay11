@@ -1,88 +1,64 @@
 using System;
 using System.Collections;
 
-namespace Enano
+namespace roleplay
 {
     public class Enanos
     {
-        private int vida;
-        private int danio;
-        private string nombre;
-        private string poder;
-        private int defensa;
+        public string Name{get;}
+        public int Defense{get;set;}
+        public int Hp{get;set;}
+        public string Power{get;}
+        public int Damage{get;set;}
+        bool Pocket=false;
+        
 
-        public Enanos (int vida, int danio, string nombre, string poder, int defensa)
+        public Enanos (string name, int defense, int hp, string power, int damage)
         {
-            this.Vida = vida;
-            this.Danio = danio;
-            this.Nombre = nombre;
-            this.Poder = poder;
-            this.Defensa = defensa;
+            this.Name = name;
+            this.Defense = defense;
+            this.Hp= hp;
+            this.Power = power;
+            this.Damage = damage;
 
-            Console.Writeline ("Se ha creado el Enano!")
+            Console.WriteLine("Se ha creado el Enano!");
         }
 
-        public int Vida {
-            get
+        public void AddItem(Item item)
+        {
+            if (!Pocket)
             {
-                return this.vida;
+                this.Damage += item.Damage;
+                this.Hp     += item.Hp;
+                this.Defense+= item.Defense;
+                Console.WriteLine($"Gracias a recibir el item {item.Name}, {this.Name} a aumentado sus estadisticas");
+                Console.WriteLine ($"Sus estadisticas son vida = {this.Hp}");
+                Console.WriteLine ($"Sus estadisticas son daño = {this.Damage}");
+                Console.WriteLine ($"Sus estadisticas son defensa = {this.Defense}");
+                Pocket=true;
             }
-            set 
+            else
             {
-                this.vida = value;
-            }
-        }  
-        public int Danio {
-            get
-            {
-                return this.danio;
-            }
-            set 
-            {
-                this.danio = value;
-            }
-            }
-        public string Nombre {
-            get
-            {
-                return this.nombre;
-            }
-            set 
-            {
-                this.nombre = value;
-            }
-            }
-        public string Poder {
-            get
-            {
-                return this.poder;
-            }
-            set 
-            {
-                this.poder = value;
+                Console.WriteLine("El personaje tiene un item equipado");
             }
         }
-        public string Elemento {
-            get
+        public void RemoveItem(Item item)
+        {
+            if (Pocket)
             {
-                return this.elemento;
+                this.Damage -= item.Damage;
+                this.Hp     -= item.Hp;
+                this.Defense-= item.Defense;
+                Console.WriteLine($"Se le elimino el item {item.Name}, {this.Name} a perdido estadisticas");
+                Console.WriteLine ($"Sus estadisticas son vida = {this.Hp}");
+                Console.WriteLine ($"Sus estadisticas son daño = {this.Damage}");
+                Console.WriteLine ($"Sus estadisticas son defensa = {this.Defense}");
+                Pocket=false;
             }
-            set 
+            else
             {
-                this.elemento = value;
-            }   
-            }    
-        public int Defensa {
-            get
-            {
-                return this.defensa;
+                Console.WriteLine("El personaje no tiene un item equipado");
             }
-            set 
-            {
-                this.defensa = value;
-            }
-            }
-
         }
     }
 }
