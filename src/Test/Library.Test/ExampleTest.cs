@@ -31,7 +31,7 @@ namespace Test.Library
             TestGame.Heal(LegolasTest,LegolasTest);
             hpexpected = 100;
 
-             Assert.AreEqual(hpexpected, LegolasTest.Hp);
+            Assert.AreEqual(hpexpected, LegolasTest.Hp);
 
             
             

@@ -16,12 +16,6 @@ namespace roleplay
             Console.WriteLine($"Se creo el hechizo {this.Name}");
         }
 
-        public int getPower(){
-
-            return this.Power;
-
-        } 
-
 
     } 
 }
