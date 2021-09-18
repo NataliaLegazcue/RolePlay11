@@ -32,10 +32,23 @@ namespace Test.Library
             hpexpected = 100;
 
             Assert.AreEqual(hpexpected, LegolasTest.Hp);
+            
 
             
             
         }
-
+        public void pruebaenanos()
+        {
+            Game TestGame = new Game();
+            Dwarf Panza = new Dwarf("Fuerteychiquito",100,150,"patadamagica",170);
+            Dwarf Peleador = new Dwarf("Elvaliente",150,180,"volar",170);
+            TestGame.Atack(Panza, Peleador);
+            int hpexpected =  130;
+            Assert.AreEqual(hpexpected, Peleador.Hp);
+            TestGame.Atack(Peleador, Peleador);
+            var hpvolar =  70;
+            Assert.AreEqual(hpexpected, Panza.Hp);
+            //testeo de la clase enanos, verificación de que pueden atacar y recibir ataques los personajes
+        }
     }
 }
